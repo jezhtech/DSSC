@@ -208,7 +208,26 @@ function Sign() {
 </div>
   </div>
 <div class="d-grid py-3">
-  <button type="button" className="btn btn-success btn-lg border-0 rounded-3 fw-bold px-5 py-3 shadow-sm" style={{backgroundImage:`linear-gradient(90deg,#1D976C,#93F9B9)`}} type="button" onClick={sign}>submit</button>
+  <button type="button" className="btn btn-success btn-lg border-0 rounded-3 fw-bold px-5 py-3 shadow-sm" data-bs-toggle="modal" data-bs-target="#staticBackdrop" style={{backgroundImage:`linear-gradient(90deg,#1D976C,#93F9B9)`}} onClick={sign}>submit</button>
+
+
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header border border-0">
+        <button type="button" class="btn-close border rounded-circle" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body text-center">
+      <svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" fill="currentColor" class="bi bi-check2-circle text-success" viewBox="0 0 16 16">
+  <path d="M2.5 8a5.5 5.5 0 0 1 8.25-4.764.5.5 0 0 0 .5-.866A6.5 6.5 0 1 0 14.5 8a.5.5 0 0 0-1 0 5.5 5.5 0 1 1-11 0z"/>
+  <path d="M15.354 3.354a.5.5 0 0 0-.708-.708L8 9.293 5.354 6.646a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l7-7z"/>
+</svg>
+<h1 class="display-5 fw-semibold">Successfully Registered !</h1>
+
+      </div>
+    </div>
+  </div>
+</div>
 </div>
 
 </form>
