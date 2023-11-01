@@ -1,6 +1,5 @@
 import Head from 'next/head'
 import Router from 'next/router'
-import Navbar from '../components/navbar'
 import firebase from '../../firebase/firebase'
 import {useCollectionData} from 'react-firebase-hooks/firestore'
 import Script from 'next/script'
