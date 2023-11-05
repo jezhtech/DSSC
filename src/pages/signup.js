@@ -3,61 +3,62 @@ import firebase from '../../firebase/firebase'
 import Head from 'next/head'
 
 function Sign() {
-  const [school, setschool] = useState()
-  const [City, setCity] = useState("")
-  const [logo, setlogo] = useState("")
-  const [payment, setpayment] = useState()
-  const [email, setemail] = useState()
-  const [code, setcode] = useState()
-  const [contact, setcontact] = useState()
-  const [address, setaddress] = useState()
-  const [District, setDistrict] = useState()
-  const [State, setState] = useState()
-  const [Tnumber, setTnumber] = useState()
-  const [pmail, setpmail] = useState()
-  const [wcontact, setwcontact] = useState()
-  const [Website, setWebsite] = useState()
-  const [pincode, setpincode] = useState()
-  const [pname, setpname] = useState()
-  const db =firebase.firestore()
+    const [school, setschool] = useState()
+    const [City, setCity] = useState("")
+    const [logo, setlogo] = useState("")
+    const [payment, setpayment] = useState()
+    const [email, setemail] = useState()
+    const [code, setcode] = useState()
+    const [contact, setcontact] = useState()
+    const [address, setaddress] = useState()
+    const [District, setDistrict] = useState()
+    const [State, setState] = useState()
+    const [Tnumber, setTnumber] = useState()
+    const [pmail, setpmail] = useState()
+    const [wcontact, setwcontact] = useState()
+    const [Website, setWebsite] = useState()
+    const [pincode, setpincode] = useState()
+    const [pname, setpname] = useState()
+    const db =firebase.firestore()
     
-  const sign=async()=>{
-    const storage =firebase.storage()
-    await storage.ref("logo").child(school).child(logo.name).put(logo)
-    await storage.ref("payment").child(school).child(payment.name).put(payment)
-    const loglink =  await storage.ref("logo").child(school).child(logo.name).getDownloadURL()
-    const paylink = await storage.ref("payment").child(school).child(payment.name).getDownloadURL()
-    await db.collection("schools").doc(school).set(
-        {
-            "adress" : address,
-            "approved":false,
-            "logo":loglink,
-            "payment": paylink,
-            "city":City,
-            "schoolname":school,
-            "email":email,
-            "code":code,
-            "pmail":pmail,
-            "telnum":Tnumber,
-            "wcontact":wcontact,
-            "district":District,
-            "state":State,
-            "website":Website,
-            "pincode":pincode,
-            "pname":pname
+    const sign=async()=>{
+        const storage =firebase.storage()
+        await storage.ref("logo").child(school).child(logo.name).put(logo)
+        await storage.ref("payment").child(school).child(payment.name).put(payment)
+        const loglink =  await storage.ref("logo").child(school).child(logo.name).getDownloadURL()
+        const paylink = await storage.ref("payment").child(school).child(payment.name).getDownloadURL()
+        await db.collection("schools").doc(school).set(
+            {
+                "adress" : address,
+                "approved":false,
+                "logo":loglink,
+                "payment": paylink,
+                "city":City,
+                "schoolname":school,
+                "email":email,
+                "code":code,
+                "pmail":pmail,
+                "telnum":Tnumber,
+                "wcontact":wcontact,
+                "district":District,
+                "state":State,
+                "website":Website,
+                "pincode":pincode,
+                "pname":pname
 
 
 
-        }
-    )
-    setaddress("")
-    setcode("")
-    setcontact("")
-    setemail("")
-    setlogo("")
-    setpayment("")
-    setschool("")
-}
+            }
+        )
+        setaddress("")
+        setcode("")
+        setcontact("")
+        setemail("")
+        setlogo("")
+        setpayment("")
+        setprincipal("")
+        setschool("")
+    }
 
   return (
    
@@ -76,7 +77,7 @@ function Sign() {
             <div class="container-fluid">
               <a class="navbar-brand" href="/">
               <div class="d-flex flex-row align-items-center">
-                <div class="">
+                <div class="p-2">
                   <img src="/images/dakshilogo.jpg" alt="Dakshin Sahodaya" width="75" height="60" className="d-inline-block img-fluid rounded-1 align-text-top"/>
                 </div>
                 <div className="p-2">
@@ -90,11 +91,11 @@ function Sign() {
               <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav fw-bolder h4 mx-auto">
                   <a class="nav-link p-3 mx-lg-2 mx-0 active" aria-current="page" href="/">Home</a>
-                  <a class="nav-link p-3 mx-lg-2 mx-0" href="/registered-schools">Registered Schools</a>
+                  <a class="nav-link p-3 mx-lg-2 mx-0" href="#">Registered Schools</a>
                   <a class="nav-link p-3 mx-lg-2 mx-0" href="/gallery">Gallery</a>
                   <a class="nav-link p-3 mx-lg-2 mx-0"></a>
                 </div>
-                <button type="button" className="btn btn-success btn-lg border-0 rounded-4 fw-bold px-5 py-3 shadow-sm" style={{backgroundImage:`linear-gradient(90deg,#1D976C,#93F9B9)`}} onClick={()=>{Router.push("/signup")}} >Register now</button>
+                <button type="button" className="btn btn-success btn-lg border-0 rounded-4 fw-bold px-5 py-3 me-3 shadow-sm" style={{backgroundImage:`linear-gradient(90deg,#1D976C,#93F9B9)`}} onClick={()=>{Router.push("/signup")}} >Register now</button>
 
               </div>
             </div>
@@ -104,11 +105,10 @@ function Sign() {
 
 </header>
 
-<center className="fw-bolder">
-        <h1 className="fw-bolder bg-light px-2 py-1">Registration Form</h1>
-        </center>
 
-        <div className="container justify-content-center py-5" >
+
+<div className="container justify-content-center py-5" >
+<p className="display-5 fw-bolder pb-1" align="center">Registration Form</p>
 
 <form class="row g-3">
 <div class="col-md-9">
@@ -136,7 +136,7 @@ function Sign() {
 
   <div class="col-md-3">
   <div class="form-floating">
-  <input type="text" class="form-control text-dark" placeholder="City" required  onChange={(e)=>{setCity(e.target.value)}} value={City} />
+  <input type="text" class="form-control text-dark" placeholder="City" required  onChange={(e)=>{setCity(e.target.value)}} value={principal} />
   <label class="text-secondary fw-semibold">City</label>
 </div>
 
@@ -231,7 +231,7 @@ function Sign() {
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header border border-0">
-        <a type="button" href="/" class="btn btn-close border rounded-circle" data-bs-dismiss="modal" aria-label="Close"></a>
+        <button type="button" class="btn-close border rounded-circle" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body text-center">
       <svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" fill="currentColor" class="bi bi-check2-circle text-success" viewBox="0 0 16 16">

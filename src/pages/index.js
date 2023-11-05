@@ -10,10 +10,13 @@ import Link from "next/link"
 function Home() {
   const[Academic_repository]=useCollectionData(firebase.firestore().collection("academic_repository"))
   const[schools]=useCollectionData(firebase.firestore().collection("schools"))
-  const[latest_news]=useCollectionData(firebase.firestore().collection("latest_news").orderBy("created"))
+  const[latest_news]=useCollectionData(firebase.firestore().collection("latest_news").orderBy("created").limitToLast(3))
   const[upcoming_events]=useCollectionData(firebase.firestore().collection("upcoming_events").orderBy("created"))
   const[ongoing_events]=useCollectionData(firebase.firestore().collection("ongoing_events").orderBy("created"))
-  latest_news&&latest_news.splice(4)
+  console.log(latest_news)
+  console.log(upcoming_events)
+  console.log(ongoing_events)
+  latest_news&&latest_news.splice(3)
   var i =null
   if(Academic_repository!=undefined){
     i=Academic_repository[0]
@@ -54,7 +57,7 @@ function Home() {
   return (
 <html>
       <Head>
-      <title>Dakshin Sahodaya School Complex</title>
+      <title>DSSC - Home</title>
       <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossOrigin="anonymous"/>
       </Head>
       <body className="">
@@ -64,7 +67,7 @@ function Home() {
             <div class="container-fluid">
               <a class="navbar-brand" href="#">
               <div class="d-flex flex-row align-items-center">
-                <div class="">
+                <div class="p-2">
                   <img src="/images/dakshilogo.jpg" alt="Dakshin Sahodaya" width="75" height="60" className="d-inline-block img-fluid rounded-1 align-text-top"/>
                 </div>
                 <div className="p-2">
@@ -78,11 +81,11 @@ function Home() {
               <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav fw-bolder h4 mx-auto">
                   <a class="nav-link p-3 mx-lg-2 mx-0 border-bottom border-success border-4 active" aria-current="page" href="#">Home</a>
-                  <a class="nav-link p-3 mx-lg-2 mx-0" href="/registered-schools">Registered Schools</a>
+                  <a class="nav-link p-3 mx-lg-2 mx-0" href="#">Registered Schools</a>
                   <a class="nav-link p-3 mx-lg-2 mx-0" href="/gallery">Gallery</a>
                   <a class="nav-link p-3 mx-lg-2 mx-0"></a>
                 </div>
-                <button type="button" className="btn btn-success btn-lg border-0 rounded-3 fw-bold px-5 py-3 shadow-sm" style={{backgroundImage:`linear-gradient(90deg,#1D976C,#93F9B9)`}} onClick={()=>{Router.push("/signup")}} >Register now</button>
+                <button type="button" className="btn btn-success btn-lg border-0 rounded-3 fw-bold px-5 py-3 me-3 shadow-sm" style={{backgroundImage:`linear-gradient(90deg,#1D976C,#93F9B9)`}} onClick={()=>{Router.push("/signup")}} >Register now</button>
 
               </div>
             </div>
@@ -150,7 +153,7 @@ function Home() {
     <div className="carousel-inner">
     <div className={`carousel-item active  ` } align="center">  
     <div className="card rounded-4 border shadow-sm my-3" style={{"width":"18rem"}}>
-      <img src={i && i.image} className="card-img-top border-0" alt="" onClick={()=>{Router.push(i && i.pdf)}} />
+      <img src={i && i.image} className="card-img-top rounded-4 border-0" alt="" onClick={()=>{Router.push(i && i.pdf)}} />
       <div className="card-body">
         <h5 className="card-title fw-bold">{i && i.title}</h5>
       </div>
@@ -245,7 +248,7 @@ function Home() {
     <div class="col py-2">
     <div class="card">
   <img src="https://assets-global.website-files.com/653d4f8ca494cdf3055d9ae5/653fb3ab1f3495ab166e9388_WhatsApp%20Image%202023-10-30%20at%2013.40.52_54643543.jpg" class="card-img-top" alt="..."/>
-  <div class="card-body bg-light">
+  <div class="card-body">
     <h5 class="card-title fw-bolder">MR.BINUMON V.R</h5>
     <h6 class="card-title fw-bolder" style={{color:"#1D976C"}}>PRESIDENT OF DSSC</h6>
 
@@ -257,7 +260,7 @@ function Home() {
     <div class="col py-2">
     <div class="card">
   <img src="https://assets-global.website-files.com/653d4f8ca494cdf3055d9ae5/653fb3ab4b25921b624efa9b_WhatsApp%20Image%202023-10-30%20at%2013.40.52_8631ecfe.jpg" class="card-img-top" alt="..."/>
-  <div class="card-body bg-light">
+  <div class="card-body">
     <h5 class="card-title fw-bolder">MRS.MANJU RAJESH</h5>
     <h6 class="card-title fw-bolder" style={{color:"#1D976C"}}>TREASURER OF DSSC</h6>
 
@@ -269,7 +272,7 @@ function Home() {
     <div class="col py-2">
     <div class="card">
   <img src="https://assets-global.website-files.com/653d4f8ca494cdf3055d9ae5/653fb3abfdc3e36599194fba_WhatsApp%20Image%202023-10-30%20at%2013.40.52_2714fc51.jpg" class="card-img-top" alt="..."/>
-  <div class="card-body bg-light">
+  <div class="card-body">
     <h5 class="card-title fw-bolder">PROF. ZOHARA HUSSAIN</h5>
     <h6 class="card-title fw-bolder" style={{color:"#1D976C"}}>SECRETARY OF DSSC</h6>
 
@@ -309,33 +312,115 @@ function Home() {
 
 </section>
 
+{/*latest news*/}
 
 <section>
 <div class="container py-5 text-center">
-    <h2 className="fw-bolder justify-content-centre mb-4" align="center">Latest <span style={{color:"#1D976C"}}>News & Events</span></h2>
+<h2 className="fw-bolder justify-content-centre mb-4" align="center">Latest <span style={{color:"#1D976C"}}>News & Events</span></h2>
 
+
+  {latest_news&&latest_news.map((ln)=>{
+ return(
   <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4">
-  {latest_news&&latest_news.map((e)=>
-
     <div class="col py-2">
-
-    <div class="card border border-1">
-  <img src={e.photo} class="card-img-top" alt="..."/>
+    <div class="card">
+  <img src={ln.photo} alt="..."/>
   <div class="card-body">
-    <p class="card-text fw-semibold">{e.detail}</p>
 
+    <p class="card-text">{ln.detail}</p>
+
+<button type="button" class="btn btn-success fw-semibold " data-bs-toggle="modal" data-bs-target="#exampleModal">
+  Learn more
+</button>
+
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+    </div>
+  </div>
+</div>
   </div>
 </div>
     </div>
-     )}
+    </div>)
 
+  })}    {ongoing_events&&ongoing_events.map((ln)=>{
+    return(
+     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4">
+       <div class="col py-2">
+       <div class="card">
+     <img src={ln.url} alt="..."/>
+     <div class="card-body">
+     <h3 className='card-title' >{ln.title}</h3>
+       <p class="card-text">{ln.detail}</p>
+   
+   <button type="button" class="btn btn-success fw-semibold " data-bs-toggle="modal" data-bs-target="#exampleModal">
+     Learn more
+   </button>
+   
+   
+   <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+     <div class="modal-dialog">
+       <div class="modal-content">
+         <div class="modal-header">
+           <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+         </div>
+         <div class="modal-body">
+           ...
+         </div>
+       </div>
+     </div>
+   </div>
+     </div>
+   </div>
+       </div>
+       </div>)
+   
+     })}    {upcoming_events&&upcoming_events.map((ln)=>{
+      return(
+       <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4">
+         <div class="col py-2">
+         <div class="card">
+       <img src={ln.photo} alt="..."/>
+       <div class="card-body">
+     
+         <p class="card-text">{ln.detail}</p>
+     
+     <button type="button" class="btn btn-success fw-semibold " data-bs-toggle="modal" data-bs-target="#exampleModal">
+       Learn more
+     </button>
+     
+     
+     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+       <div class="modal-dialog">
+         <div class="modal-content">
+           <div class="modal-header">
+             <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+           </div>
+           <div class="modal-body">
+             ...
+           </div>
+         </div>
+       </div>
+     </div>
+       </div>
+     </div>
+         </div>
+         </div>)
+     
+       })}     </div>
 
-    
-  </div>
-</div>
-</section>
-
-
+    </section>
 
 {/* <section className="py-5 py-md-5">
   <h2 className="fw-bolder justify-content-centre mb-5" align="center">Latest <span style={{color:"#FF512F"}}>News</span></h2>
