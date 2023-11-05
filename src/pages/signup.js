@@ -4,7 +4,7 @@ import Head from 'next/head'
 
 function Sign() {
     const [school, setschool] = useState()
-    const [principal, setprincipal] = useState("")
+    const [City, setCity] = useState("")
     const [logo, setlogo] = useState("")
     const [payment, setpayment] = useState()
     const [email, setemail] = useState()
@@ -33,7 +33,7 @@ function Sign() {
                 "approved":false,
                 "logo":loglink,
                 "payment": paylink,
-                "principal":principal,
+                "city":City,
                 "schoolname":school,
                 "email":email,
                 "code":code,
@@ -136,7 +136,7 @@ function Sign() {
 
   <div class="col-md-3">
   <div class="form-floating">
-  <input type="text" class="form-control text-dark" placeholder="City" required  onChange={(e)=>{setprincipal(e.target.value)}} value={principal} />
+  <input type="text" class="form-control text-dark" placeholder="City" required  onChange={(e)=>{setCity(e.target.value)}} value={principal} />
   <label class="text-secondary fw-semibold">City</label>
 </div>
 
