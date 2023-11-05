@@ -13,6 +13,9 @@ function Home() {
   const[latest_news]=useCollectionData(firebase.firestore().collection("latest_news").orderBy("created").limitToLast(3))
   const[upcoming_events]=useCollectionData(firebase.firestore().collection("upcoming_events").orderBy("created"))
   const[ongoing_events]=useCollectionData(firebase.firestore().collection("ongoing_events").orderBy("created"))
+  console.log(latest_news)
+  console.log(upcoming_events)
+  console.log(ongoing_events)
   latest_news&&latest_news.splice(3)
   var i =null
   if(Academic_repository!=undefined){
@@ -309,18 +312,22 @@ function Home() {
 
 </section>
 
+{/*latest news*/}
 
 <section>
 <div class="container py-5 text-center">
-    <h2 className="fw-bolder justify-content-centre mb-4" align="center">Latest <span style={{color:"#1D976C"}}>News & Events</span></h2>
+<h2 className="fw-bolder justify-content-centre mb-4" align="center">Latest <span style={{color:"#1D976C"}}>News & Events</span></h2>
 
+
+  {latest_news&&latest_news.map((ln)=>{
+ return(
   <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4">
     <div class="col py-2">
     <div class="card">
-  <img src="https://assets-global.website-files.com/653d4f8ca494cdf3055d9ae5/653d4fc73b2ad1cc7f6d2177_dakshin-sahodaya-hero.svg" class="card-img-top" alt="..."/>
+  <img src={ln.photo} alt="..."/>
   <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+
+    <p class="card-text">{ln.detail}</p>
 
 <button type="button" class="btn btn-success fw-semibold " data-bs-toggle="modal" data-bs-target="#exampleModal">
   Learn more
@@ -343,179 +350,77 @@ function Home() {
   </div>
 </div>
     </div>
-    <div class="col py-2">
-    <div class="card">
-  <img src="https://assets-global.website-files.com/653d4f8ca494cdf3055d9ae5/653d4fc73b2ad1cc7f6d2177_dakshin-sahodaya-hero.svg" class="card-img-top" alt="..."/>
-  <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    </div>)
 
-<button type="button" class="btn btn-success fw-semibold " data-bs-toggle="modal" data-bs-target="#exampleModal">
-  Learn more
-</button>
+  })}    {ongoing_events&&ongoing_events.map((ln)=>{
+    return(
+     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4">
+       <div class="col py-2">
+       <div class="card">
+     <img src={ln.url} alt="..."/>
+     <div class="card-body">
+     <h3 className='card-title' >{ln.title}</h3>
+       <p class="card-text">{ln.detail}</p>
+   
+   <button type="button" class="btn btn-success fw-semibold " data-bs-toggle="modal" data-bs-target="#exampleModal">
+     Learn more
+   </button>
+   
+   
+   <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+     <div class="modal-dialog">
+       <div class="modal-content">
+         <div class="modal-header">
+           <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+         </div>
+         <div class="modal-body">
+           ...
+         </div>
+       </div>
+     </div>
+   </div>
+     </div>
+   </div>
+       </div>
+       </div>)
+   
+     })}    {upcoming_events&&upcoming_events.map((ln)=>{
+      return(
+       <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4">
+         <div class="col py-2">
+         <div class="card">
+       <img src={ln.photo} alt="..."/>
+       <div class="card-body">
+     
+         <p class="card-text">{ln.detail}</p>
+     
+     <button type="button" class="btn btn-success fw-semibold " data-bs-toggle="modal" data-bs-target="#exampleModal">
+       Learn more
+     </button>
+     
+     
+     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+       <div class="modal-dialog">
+         <div class="modal-content">
+           <div class="modal-header">
+             <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+           </div>
+           <div class="modal-body">
+             ...
+           </div>
+         </div>
+       </div>
+     </div>
+       </div>
+     </div>
+         </div>
+         </div>)
+     
+       })}     </div>
 
-
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        ...
-      </div>
-    </div>
-  </div>
-</div>
-  </div>
-</div>
-    </div>
-    <div class="col py-2">
-    <div class="card">
-  <img src="https://assets-global.website-files.com/653d4f8ca494cdf3055d9ae5/653d4fc73b2ad1cc7f6d2177_dakshin-sahodaya-hero.svg" class="card-img-top" alt="..."/>
-  <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-
-<button type="button" class="btn btn-success fw-semibold " data-bs-toggle="modal" data-bs-target="#exampleModal">
-  Learn more
-</button>
-
-
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        ...
-      </div>
-    </div>
-  </div>
-</div>
-  </div>
-</div>
-    </div>
-    <div class="col py-2">
-    <div class="card">
-  <img src="https://assets-global.website-files.com/653d4f8ca494cdf3055d9ae5/653d4fc73b2ad1cc7f6d2177_dakshin-sahodaya-hero.svg" class="card-img-top" alt="..."/>
-  <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-
-<button type="button" class="btn btn-success fw-semibold " data-bs-toggle="modal" data-bs-target="#exampleModal">
-  Learn more
-</button>
-
-
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        ...
-      </div>
-    </div>
-  </div>
-</div>
-  </div>
-</div>
-    </div>
-    <div class="col py-2">
-    <div class="card">
-  <img src="https://assets-global.website-files.com/653d4f8ca494cdf3055d9ae5/653d4fc73b2ad1cc7f6d2177_dakshin-sahodaya-hero.svg" class="card-img-top" alt="..."/>
-  <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-
-<button type="button" class="btn btn-success fw-semibold " data-bs-toggle="modal" data-bs-target="#exampleModal">
-  Learn more
-</button>
-
-
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        ...
-      </div>
-    </div>
-  </div>
-</div>
-  </div>
-</div>
-    </div>
-    <div class="col py-2">
-    <div class="card">
-  <img src="https://assets-global.website-files.com/653d4f8ca494cdf3055d9ae5/653d4fc73b2ad1cc7f6d2177_dakshin-sahodaya-hero.svg" class="card-img-top" alt="..."/>
-  <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-
-<button type="button" class="btn btn-success fw-semibold " data-bs-toggle="modal" data-bs-target="#exampleModal">
-  Learn more
-</button>
-
-
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        ...
-      </div>
-    </div>
-  </div>
-</div>
-  </div>
-</div>
-    </div>
-    <div class="col py-2">
-    <div class="card">
-  <img src="https://assets-global.website-files.com/653d4f8ca494cdf3055d9ae5/653d4fc73b2ad1cc7f6d2177_dakshin-sahodaya-hero.svg" class="card-img-top" alt="..."/>
-  <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-
-<button type="button" class="btn btn-success fw-semibold " data-bs-toggle="modal" data-bs-target="#exampleModal">
-  Learn more
-</button>
-
-
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        ...
-      </div>
-    </div>
-  </div>
-</div>
-  </div>
-</div>
-    </div>
-
-    
-  </div>
-</div>
-</section>
+    </section>
 
 {/* <section className="py-5 py-md-5">
   <h2 className="fw-bolder justify-content-centre mb-5" align="center">Latest <span style={{color:"#FF512F"}}>News</span></h2>

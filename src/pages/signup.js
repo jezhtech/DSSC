@@ -11,6 +11,14 @@ function Sign() {
     const [code, setcode] = useState()
     const [contact, setcontact] = useState()
     const [address, setaddress] = useState()
+    const [District, setDistrict] = useState()
+    const [State, setState] = useState()
+    const [Tnumber, setTnumber] = useState()
+    const [pmail, setpmail] = useState()
+    const [wcontact, setwcontact] = useState()
+    const [Website, setWebsite] = useState()
+    const [pincode, setpincode] = useState()
+    const [pname, setpname] = useState()
     const db =firebase.firestore()
     
     const sign=async()=>{
@@ -23,13 +31,21 @@ function Sign() {
             {
                 "adress" : address,
                 "approved":false,
-                "contact":contact,
                 "logo":loglink,
                 "payment": paylink,
                 "principal":principal,
                 "schoolname":school,
                 "email":email,
-                "code":code
+                "code":code,
+                "pmail":pmail,
+                "telnum":Tnumber,
+                "wcontact":wcontact,
+                "district":District,
+                "state":State,
+                "website":Website,
+                "pincode":pincode,
+                "pname":pname
+
 
 
             }
@@ -127,20 +143,20 @@ function Sign() {
   </div>
   <div class="col-md-3">
   <div class="form-floating">
-  <input type="number" class="form-control text-dark" placeholder="Pin Code" required value={email} onChange={(e)=>{setemail(e.target.value)}}/>
+  <input type="number" class="form-control text-dark" placeholder="Pin Code" required value={pincode} onChange={(e)=>{setpincode(e.target.value)}}/>
   <label class="text-secondary fw-semibold">Pin Code</label>
 </div>
 
   </div>
   <div class="col-md-3">
   <div class="form-floating">
-  <input type="text" class="form-control text-dark" required placeholder="District" value={contact} onChange={(e)=>{setcontact(e.target.value)}}/>
+  <input type="text" class="form-control text-dark" required placeholder="District" value={District} onChange={(e)=>{setDistrict(e.target.value)}}/>
   <label class="text-secondary fw-semibold">District</label>
 </div>
   </div>
   <div class="col-md-3">
   <div class="form-floating">
-  <input type="text" class="form-control text-dark" placeholder="State" value={contact} onChange={(e)=>{setcontact(e.target.value)}}/>
+  <input type="text" class="form-control text-dark" placeholder="State" value={State} onChange={(e)=>{setState(e.target.value)}}/>
   <label class="text-secondary fw-semibold">State</label>
 </div>
   </div>
@@ -148,7 +164,7 @@ function Sign() {
 
   <div class="col-md-4">
   <div class="form-floating">
-  <input type="tel" class="form-control text-dark" placeholder="Telephone Number" required value={email} onChange={(e)=>{setemail(e.target.value)}}/>
+  <input type="tel" class="form-control text-dark" placeholder="Telephone Number" required value={Tnumber} onChange={(e)=>{setTnumber(e.target.value)}}/>
   <label class="text-secondary fw-semibold">Telephone Number</label>
 </div>
     <div class="valid-feedback">
@@ -157,13 +173,13 @@ function Sign() {
   </div>
   <div class="col-md-4">
   <div class="form-floating">
-  <input type="email" class="form-control text-dark" placeholder="Email ID" value={contact} onChange={(e)=>{setcontact(e.target.value)}}/>
+  <input type="email" class="form-control text-dark" placeholder="Email ID" value={email} onChange={(e)=>{setemail(e.target.value)}}/>
   <label class="text-secondary fw-semibold">Email ID</label>
 </div>
   </div>
   <div class="col-md-4">
   <div class="form-floating">
-  <input type="tel" class="form-control text-dark" placeholder="Password" value={contact} onChange={(e)=>{setcontact(e.target.value)}}/>
+  <input type="text" class="form-control text-dark" placeholder="website" value={Website} onChange={(e)=>{setWebsite(e.target.value)}}/>
   <label class="text-secondary fw-semibold">Website</label>
 </div>
   </div>
@@ -190,20 +206,20 @@ function Sign() {
 
   <div class="col-md-4">
   <div class="form-floating">
-  <input type="text" class="form-control text-dark" placeholder="Principl Name" required value={email} onChange={(e)=>{setemail(e.target.value)}}/>
+  <input type="text" class="form-control text-dark" placeholder="Principl Name" required value={pname} onChange={(e)=>{setpname(e.target.value)}}/>
   <label class="text-secondary fw-semibold">Principl Name</label>
 </div>
 
   </div>
   <div class="col-md-4">
   <div class="form-floating">
-  <input type="tel" class="form-control text-dark" required placeholder="WhatsApp Number" value={contact} onChange={(e)=>{setcontact(e.target.value)}}/>
+  <input type="tel" class="form-control text-dark" required placeholder="WhatsApp Number" value={wcontact} onChange={(e)=>{setwcontact(e.target.value)}}/>
   <label class="text-secondary fw-semibold">WhatsApp Number</label>
 </div>
   </div>
   <div class="col-md-4">
   <div class="form-floating">
-  <input type="email" class="form-control text-dark" placeholder="Principal Email ID" required value={contact} onChange={(e)=>{setcontact(e.target.value)}}/>
+  <input type="email" class="form-control text-dark" placeholder="Principal Email ID" required value={pmail} onChange={(e)=>{setpmail(e.target.value)}}/>
   <label class="text-secondary fw-semibold">Principal Email ID</label>
 </div>
   </div>
