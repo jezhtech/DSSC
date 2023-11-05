@@ -10,7 +10,7 @@ import Link from "next/link"
 function Home() {
   const[Academic_repository]=useCollectionData(firebase.firestore().collection("academic_repository"))
   const[schools]=useCollectionData(firebase.firestore().collection("schools"))
-  const[latest_news]=useCollectionData(firebase.firestore().collection("latest_news").orderBy("created").limitToLast(4))
+  const[latest_news]=useCollectionData(firebase.firestore().collection("latest_news").orderBy("created"))
   const[upcoming_events]=useCollectionData(firebase.firestore().collection("upcoming_events").orderBy("created"))
   const[ongoing_events]=useCollectionData(firebase.firestore().collection("ongoing_events").orderBy("created"))
   latest_news&&latest_news.splice(4)
