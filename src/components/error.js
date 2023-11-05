@@ -12,8 +12,14 @@ function Error() {
             <title>Error</title>
             <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossOrigin="anonymous"/>
             </Head>
-            <body>
-    <div className='mx-auto' > You Are Not The Admin </div>
+            <body >
+              <div className="container-fluid">
+                <center>
+                  <h1>You are not an admin !</h1>
+                  <h2>Sign In as ADMIN </h2>
+
+                </center>
+              </div>
                 
             </body>
             <Script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossOrigin="anonymous"></Script>

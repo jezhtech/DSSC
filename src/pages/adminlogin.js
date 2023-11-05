@@ -42,7 +42,7 @@ function Auth() {
             <div class="container-fluid">
               <a class="navbar-brand" href="/">
               <div class="d-flex flex-row align-items-center">
-                <div class="p-2">
+                <div class="">
                   <img src="/images/dakshilogo.jpg" alt="Dakshin Sahodaya" width="75" height="60" className="d-inline-block img-fluid rounded-1 align-text-top"/>
                 </div>
                 <div className="p-2">
@@ -60,7 +60,7 @@ function Auth() {
                   <a class="nav-link p-3 mx-lg-2 mx-0 border-bottom-1" href="/gallery">Gallery</a>
                   <a class="nav-link p-3 mx-lg-2 mx-0 border-bottom-1"></a>
                 </div>
-                <button type="button" className="btn btn-success btn-lg border-0 rounded-4 fw-bold px-5 py-3 me-3 shadow-sm" style={{backgroundImage:`linear-gradient(90deg,#1D976C,#93F9B9)`}} onClick={()=>{Router.push("/signup")}} >Register now</button>
+                <button type="button" className="btn btn-success btn-lg border-0 rounded-4 fw-bold px-5 py-3 shadow-sm" style={{backgroundImage:`linear-gradient(90deg,#1D976C,#93F9B9)`}} onClick={()=>{Router.push("/signup")}} >Register now</button>
 
               </div>
             </div>

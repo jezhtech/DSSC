@@ -2,9 +2,8 @@ import React from 'react'
 import Router from 'next/router'
 import firebase from '../../firebase/firebase'
 import Head from 'next/head'
-import { useCollectionData } from 'react-firebase-hooks/firestore'
+import Link from 'next/link'
 export default function registeredschools() {
-  const[schools]=useCollectionData(firebase.firestore().collection("schools"))
   return (
     <html>
     <Head>
@@ -44,20 +43,6 @@ export default function registeredschools() {
 
 
 </header>
-<>
-{
-  schools&&schools.map((s)=>{
-    if(s.approved==true){
-    return(
-      <>
-      <h3>principal</h3><p>{s.pname}</p>
-      <h3>logo</h3><img src={s.logo}/>
-      </>
-    )}
-  })
-}
-
-</>
 
         <footer className="navbar navbar-expand-lg bg-light px-lg-5 px-2 text-dark border border-top-1">
     <div className="container-fluid">
