@@ -25,25 +25,25 @@ function LatestNews() {
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossOrigin="anonymous"/>
 
 </Head>
-<body>    
-<nav className="navbar border-bottom border-top">
+<body className="bg-black">    
+<nav className="navbar bg-black border-bottom border-top">
 <div className="container-fluid justify-content-center px-0">
-  <h1 className="navbar-brand my-0 h1 fw-bolder"><b>LATEST NEWS</b></h1>      
+  <h1 className="navbar-brand my-0 h1 fw-bolder text-white"><b>LATEST NEWS</b></h1>      
 </div>
 </nav>
-<div className="container-fluid justify-content-center" style={{width:'25rem'}}>
+<div className="container-fluid justify-content-center" style={{width:'20.25em'}}>
 <form className="pb-lg-5 pt-lg-4 px-2 pb-5 pt-4">
   <div className="form-floating">
-    <textarea type="text" className="form-control bg-light" rows={100} col={20} placeholder="Name" onChange={(e)=>{setdetail(e.target.value)}}/>
+    <textarea type="text" className="form-control bg-dark text-white border-0" rows="10" placeholder="Name" onChange={(e)=>{setdetail(e.target.value)}}/>
     <label className="text-secondary fw-bold">Details of the news</label>
   </div>
   <div className="my-2">
- <label className="form-label fw-bold">Image for the News</label>
+ <label className="form-label text-white fw-bold">Image for the News</label>
  <input className="form-control" type="file" accept=".png, .jpg, .jpeg" id="formFile" onChange={(e)=>{setimg(e.target.files[0])}}/>
 </div>
 
 <div className="d-grid mt-3">
-<button type="button" className="btn btn-lg fw-bold border-0 text-white py-2" style={{backgroundImage:`linear-gradient(90deg,#1D976C,#93F9B9)`}} onClick={post}>Post</button>
+<button type="button" className="btn btn-lg text-black fw-bold bg-warning border-0 py-2" onClick={post}>Post</button>
 </div>
 </form>
 </div>

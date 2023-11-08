@@ -1,10 +1,7 @@
 import React from 'react'
-import Router from 'next/router'
 import firebase from '../../firebase/firebase'
 import {useCollectionData}from 'react-firebase-hooks/firestore'
 import Head from 'next/head'
-import Script from 'next/script'
-
 import Link from 'next/link'
 
 function Gallery() {
@@ -21,9 +18,9 @@ function Gallery() {
         <div px-5>
           <nav class="navbar navbar-expand-lg bg-body-tertiary px-lg-5 px-0 border border-bottom ">
             <div class="container-fluid">
-              <a class="navbar-brand" href="/">
+              <a class="navbar-brand" href="#">
               <div class="d-flex flex-row align-items-center">
-                <div class="">
+                <div class="p-2">
                   <img src="/images/dakshilogo.jpg" alt="Dakshin Sahodaya" width="75" height="60" className="d-inline-block img-fluid rounded-1 align-text-top"/>
                 </div>
                 <div className="p-2">
@@ -36,12 +33,12 @@ function Gallery() {
               </button>
               <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav fw-bolder h4 mx-auto">
-                  <a class="nav-link p-3 mx-lg-2 mx-0 " href="/">Home</a>
-                  <a class="nav-link p-3 mx-lg-2 mx-0 " href="/registered-schools">Registered Schools</a>
-                  <a class="nav-link p-3 mx-lg-2 mx-0 active border-bottom border-success border-4" aria-current="page" href="/gallery">Gallery</a>
+                  <a class="nav-link p-3 mx-lg-2 mx-0  active" aria-current="page" href="#">Home</a>
+                  <a class="nav-link p-3 mx-lg-2 mx-0 " href="#">Registered Schools</a>
+                  <a class="nav-link p-3 mx-lg-2 mx-0 border-bottom border-success border-4" href="/gallery">Gallery</a>
                   <a class="nav-link p-3 mx-lg-2 mx-0 "></a>
                 </div>
-                <button type="button" className="btn btn-success btn-lg border-0 rounded-3 fw-bold px-5 py-3 shadow-sm" style={{backgroundImage:`linear-gradient(90deg,#1D976C,#93F9B9)`}} onClick={()=>{Router.push("/signup")}} >Register now</button>
+                <button type="button" className="btn btn-success btn-lg border-0 rounded-3 fw-bold px-5 py-3 me-3 shadow-sm" style={{backgroundImage:`linear-gradient(90deg,#1D976C,#93F9B9)`}} onClick={()=>{Router.push("/signup")}} >Register now</button>
 
               </div>
             </div>
