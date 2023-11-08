@@ -35,7 +35,7 @@ console.log(schools)
         return( 
           <div class="col p-2">
         <div class="card border border-1 bg-light">
-       <img src="https://assets-global.website-files.com/653d4f8ca494cdf3055d9ae5/653d4fc73b2ad1cc7f6d2177_dakshin-sahodaya-hero.svg" class="card-img-top" alt="..."/>
+       <img src={school.logo} class="card-img-top" alt="..."/>
        <div class="card-body">
         <p className="card-text fw-semibold text">School Name: {school.schoolname}</p>
         <p className="card-text fw-semibold text">Affliation Code : {school.code}</p>
@@ -93,7 +93,7 @@ console.log(schools)
         return( 
           <div class="col p-2">
         <div class="card border border-1 bg-light">
-       <img src="https://assets-global.website-files.com/653d4f8ca494cdf3055d9ae5/653d4fc73b2ad1cc7f6d2177_dakshin-sahodaya-hero.svg" class="card-img-top" alt="..."/>
+       <img src={school.logo} class="card-img-top" alt="..."/>
        <div class="card-body">
         <p className="card-text fw-semibold text">School Name: {school.schoolname}</p>
         <p className="card-text fw-semibold text">Affliation Code : {school.code}</p>
