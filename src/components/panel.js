@@ -38,21 +38,12 @@ function Panel(){
                 setiframe("/admin/ar")
                 }}>ACADEMIC REPOSITORY</a>
                 <a className="nav-link text-warning fw-bold bg-dark border-none rounded-2 mb-2 py-3" href="#"onClick={()=>{
-                setiframe("/admin/ue")
-                }}>UPCOMING EVENTS</a>
-                <a className="nav-link text-warning fw-bold bg-dark border-none rounded-2 mb-2 py-3" href="#"onClick={()=>{
-                setiframe("/admin/oe")
-                }}>ONGOING EVENTS</a>
-                <a className="nav-link text-warning fw-bold bg-dark border-none rounded-2 mb-2 py-3" href="#"onClick={()=>{
                 setiframe("/admin/ln")
                 }}>LATEST NEWS</a>
                 <hr className="border border-white m-0" />
                 <a className="nav-link text-warning fw-bold bg-dark border-none rounded-2 mt-2 py-3" href="#"onClick={()=>{
                 setiframe("/admin/g")
                 }}>GALLERY</a>
-                <a className="nav-link text-warning fw-bold bg-dark border-none rounded-2 mt-2 py-3" href="#"onClick={()=>{
-                setiframe("/admin/bm")
-                }}>BOARD MEMBERS</a>
               </nav>
           </div>
           <div className="col-sm-10 mx-0 px-0 border border-dark" align="center">
@@ -76,8 +67,8 @@ function Panel(){
     </a>
     
       <ul class="nav col-md-5 justify-content-end">
-        <li class="nav-item"><a href="https://jeshtechnology.com/" class="nav-link px-2 fw-semibold text-secondary">Designed And Developed By
-<b> Jesh Technology Pvt. Ltd.</b></a></li>
+        <li class="nav-item"><a href="https://jezhtechnologies.com/" class="nav-link px-2 fw-semibold text-secondary">Designed And Developed By
+<b> Jezh Technologies Pvt. Ltd.</b></a></li>
       </ul>
     </footer>
 </div>       
