@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import firebase from '../../firebase/firebase'
 import Head from 'next/head'
-
+import { redirect } from 'next/navigation'
 function Sign() {
   const [school, setschool] = useState()
   const [City, setCity] = useState("")
@@ -57,6 +57,7 @@ function Sign() {
     setlogo("")
     setpayment("")
     setschool("")
+    redirect('/')
 }
 
   return (
