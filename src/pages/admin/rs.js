@@ -51,7 +51,7 @@ console.log(schools)
         <p className="card-text fw-semibold text">Whatsapp no. : {school.wcontact}</p>
         <p className="card-text fw-semibold text">Principal E-mail : {school.pmail}</p>
   
-
+       <img src={school.payment} class="card-img-top" alt="..."/>
 
      <button className="btn btn-lg text-black fw-bold bg-warning border-0 py-2" type="button" onClick={async()=>{
       await db.collection("schools").doc(school.schoolname).update({"approved":true})
@@ -109,7 +109,7 @@ console.log(schools)
         <p className="card-text fw-semibold text">Whatsapp no. : {school.wcontact}</p>
         <p className="card-text fw-semibold text">Principal E-mail : {school.pmail}</p>
   
-
+              <img src={school.payment} class="card-img-top" alt="..."/>
      
 
      <button className="btn btn-lg text-black fw-bold bg-danger border-0 py-2" type="button" onClick={async()=>{
