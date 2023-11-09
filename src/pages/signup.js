@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import firebase from '../../firebase/firebase'
 import Head from 'next/head'
-import { redirect } from 'next/navigation'
+
 function Sign() {
   const [school, setschool] = useState()
   const [City, setCity] = useState("")
@@ -57,12 +57,11 @@ function Sign() {
     setlogo("")
     setpayment("")
     setschool("")
-    redirect('/')
 }
 
   return (
    
-    <html>
+    <div>
     <Head>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
@@ -70,7 +69,7 @@ function Sign() {
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous"/>
 
 </Head>
-<body className="d-none d-lg-block"> 
+<div className="d-none d-lg-block"> 
 <header>
         <div px-5>
           <nav className="navbar navbar-expand-lg bg-body-tertiary px-lg-5 px-0 border border-bottom ">
@@ -269,8 +268,8 @@ function Sign() {
   </footer>  
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossOrigin="anonymous"></script>
 
-</body>
-</html>
+</div>
+</div>
   )
 }
 

@@ -17,7 +17,7 @@ function LatestNews() {
   }
   return (
 
-    <html>
+    <div>
     <Head>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
@@ -25,7 +25,7 @@ function LatestNews() {
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossOrigin="anonymous"/>
 
 </Head>
-<body>    
+<div>    
 <nav className="navbar border-bottom border-top">
 <div className="container-fluid justify-content-center px-0">
   <h1 className="navbar-brand my-0 h1 fw-bolder"><b>LATEST NEWS</b></h1>      
@@ -48,8 +48,8 @@ function LatestNews() {
 </form>
 </div>
 
-</body>
-</html>
+</div>
+</div>
   )
 }
 

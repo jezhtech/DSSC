@@ -19,45 +19,17 @@ function Home() {
     i=Academic_repository[0]
    
   }  
-  var ue =null
-  var oe =null
-  
-  if(upcoming_events!=undefined){
-    if(ue===null){
 
-
-
-
-
-      
-   
-      var n1=Math.floor((Math.random()*upcoming_events.length))
-      ue=upcoming_events[n1]
-      
-  }
-     
-   
-  }
-  
-  if(upcoming_events!=undefined){
-    if(oe===null){
-   
-      var n2=Math.floor((Math.random()*upcoming_events.length))
-      oe=upcoming_events[n2]
-    }
-     
-   
-  }
- 
   
    
   return (
-<html>
+    <div>
+<div>
       <Head>
       <title>Dakshin Sahodaya School Complex</title>
       <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossOrigin="anonymous"/>
       </Head>
-      <body className="">
+      <div>
       <header>
         <div px-5>
           <nav className="navbar navbar-expand-lg bg-body-tertiary px-lg-5 px-0 border border-bottom ">
@@ -367,8 +339,9 @@ function Home() {
   </footer>  
 
 <Script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossOrigin="anonymous"></Script>
-      </body>
-  </html>
+      </div>
+  </div>
+  </div>
   )
 }
 

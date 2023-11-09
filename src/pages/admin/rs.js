@@ -8,9 +8,8 @@ function RegisteredSchools() {
 
 const[schools]=useCollectionData(db.collection("schools"))
 
-console.log(schools)
   return (
-    <html>
+    <div>
     <Head>
  <meta charset="utf-8"/>
  <meta name="viewport" content="width=device-width, initial-scale=1"/>
@@ -18,7 +17,7 @@ console.log(schools)
  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossOrigin="anonymous"/>
 
  </Head>
- <body>
+ <div>
  <nav className="navbar border-bottom border-top justify-content-center m-0 p-0">
 
 
@@ -51,7 +50,7 @@ console.log(schools)
         <p className="card-text fw-semibold text">Whatsapp no. : {school.wcontact}</p>
         <p className="card-text fw-semibold text">Principal E-mail : {school.pmail}</p>
   
-       <img src={school.payment} class="card-img-top" alt="..."/>
+
 
      <button className="btn btn-lg text-black fw-bold bg-warning border-0 py-2" type="button" onClick={async()=>{
       await db.collection("schools").doc(school.schoolname).update({"approved":true})
@@ -109,7 +108,7 @@ console.log(schools)
         <p className="card-text fw-semibold text">Whatsapp no. : {school.wcontact}</p>
         <p className="card-text fw-semibold text">Principal E-mail : {school.pmail}</p>
   
-              <img src={school.payment} class="card-img-top" alt="..."/>
+
      
 
      <button className="btn btn-lg text-black fw-bold bg-danger border-0 py-2" type="button" onClick={async()=>{
@@ -138,8 +137,8 @@ console.log(schools)
        </div>
          </div>
          </div>
-         </body>
-</html>
+         </div>
+</div>
   )
 }
 
