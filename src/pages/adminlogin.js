@@ -27,7 +27,7 @@ function Auth() {
     
     return(
         
-        <div>
+        <html>
             <Head>
             <meta charset="utf-8"/>
             <meta name="viewport" content="width=device-width, initial-scale=1"/>
@@ -35,14 +35,14 @@ function Auth() {
             <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossOrigin="anonymous"/>
 
       </Head>
-      <div> 
+      <body> 
       <header>
         <div px-5>
           <nav className="navbar navbar-expand-lg bg-body-tertiary px-lg-5 px-0 border border-bottom ">
             <div className="container-fluid">
               <a className="navbar-brand" href="/">
               <div className="d-flex flex-row align-items-center">
-                <div className="p-2">
+                <div className="">
                   <img src="/images/dakshilogo.jpg" alt="Dakshin Sahodaya" width="75" height="60" className="d-inline-block img-fluid rounded-1 align-text-top"/>
                 </div>
                 <div className="p-2">
@@ -55,10 +55,10 @@ function Auth() {
               </button>
               <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div className="navbar-nav fw-bolder h4 mx-auto">
-                  <a className="nav-link p-3 mx-lg-2 mx-0" href="/">Home</a>
-                  <a className="nav-link p-3 mx-lg-2 mx-0" href="/registered-schools">Registered Schools</a>
-                  <a className="nav-link p-3 mx-lg-2 mx-0" href="/gallery">Gallery</a>
-                  <a className="nav-link p-3 mx-lg-2 mx-0"></a>
+                  <a className="nav-link p-3 mx-lg-2 mx-0 border-bottom-1 active" aria-current="page" href="#">Home</a>
+                  <a className="nav-link p-3 mx-lg-2 mx-0 border-bottom-1" href="#">Registered Schools</a>
+                  <a className="nav-link p-3 mx-lg-2 mx-0 border-bottom-1" href="/gallery">Gallery</a>
+                  <a className="nav-link p-3 mx-lg-2 mx-0 border-bottom-1"></a>
                 </div>
                 <button type="button" className="btn btn-success btn-lg border-0 rounded-4 fw-bold px-5 py-3 shadow-sm" style={{backgroundImage:`linear-gradient(90deg,#1D976C,#93F9B9)`}} onClick={()=>{Router.push("/signup")}} >Register now</button>
 
@@ -117,8 +117,8 @@ function Auth() {
 
   <Script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossOrigin="anonymous"></Script>
 
-      </div>
-        </div>
+      </body>
+        </html>
       
       
     )
