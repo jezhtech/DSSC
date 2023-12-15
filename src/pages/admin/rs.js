@@ -8,8 +8,9 @@ function RegisteredSchools() {
 
 const[schools]=useCollectionData(db.collection("schools"))
 
+console.log(schools)
   return (
-    <div>
+    <html>
     <Head>
  <meta charset="utf-8"/>
  <meta name="viewport" content="width=device-width, initial-scale=1"/>
@@ -17,7 +18,7 @@ const[schools]=useCollectionData(db.collection("schools"))
  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossOrigin="anonymous"/>
 
  </Head>
- <div>
+ <body>
  <nav className="navbar border-bottom border-top justify-content-center m-0 p-0">
 
 
@@ -34,7 +35,7 @@ const[schools]=useCollectionData(db.collection("schools"))
         return( 
           <div class="col p-2">
         <div class="card border border-1 bg-light">
-       <img src={school.logo} class="card-img-top" alt="..."/>
+       <img src="https://assets-global.website-files.com/653d4f8ca494cdf3055d9ae5/653d4fc73b2ad1cc7f6d2177_dakshin-sahodaya-hero.svg" class="card-img-top" alt="..."/>
        <div class="card-body">
         <p className="card-text fw-semibold text">School Name: {school.schoolname}</p>
         <p className="card-text fw-semibold text">Affliation Code : {school.code}</p>
@@ -92,7 +93,7 @@ const[schools]=useCollectionData(db.collection("schools"))
         return( 
           <div class="col p-2">
         <div class="card border border-1 bg-light">
-       <img src={school.logo} class="card-img-top" alt="..."/>
+       <img src="https://assets-global.website-files.com/653d4f8ca494cdf3055d9ae5/653d4fc73b2ad1cc7f6d2177_dakshin-sahodaya-hero.svg" class="card-img-top" alt="..."/>
        <div class="card-body">
         <p className="card-text fw-semibold text">School Name: {school.schoolname}</p>
         <p className="card-text fw-semibold text">Affliation Code : {school.code}</p>
@@ -137,8 +138,8 @@ const[schools]=useCollectionData(db.collection("schools"))
        </div>
          </div>
          </div>
-         </div>
-</div>
+         </body>
+</html>
   )
 }
 
