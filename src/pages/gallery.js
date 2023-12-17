@@ -9,7 +9,7 @@ import Link from 'next/link'
 
 function Gallery() {
     const [gallery]=useCollectionData(firebase.firestore().collection("gallery"))
-    
+    console.log(gallery)
   return (
     <html>
     <Head>
@@ -58,9 +58,16 @@ function Gallery() {
            <div className="">
             <div className='row'>    {
         gallery&&gallery.map((g)=> <div className='col-sm-12 col-md-6 col-lg-4 my-2' key={g.id}>
-            <img className="img-fluid rounded-4" src={g.url} />
+            
             <span className="fw-bolder ms-1">{g.folder}</span>
-
+            {g.url&&g.url.map((u)=>{
+              return(
+                <>
+            <img className="img-fluid rounded-4" src={u.url} />
+            <br/>
+            </>
+              )
+            })}
         </div>)}
         </div>
            </div>

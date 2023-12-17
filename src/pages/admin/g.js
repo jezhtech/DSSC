@@ -12,9 +12,24 @@ function Gallery() {
         
         const imglink =  await storage.ref("gallery").child(folder).child(img.name).getDownloadURL()
         
-        db.collection("gallery").doc().set(
+        
+        var pic = null
+
+        await db.collection("gallery").doc(folder).get().then((doc)=>{
+          if(doc.exists){
+            
+            const arr = doc.data().url
+            
+            arr?.push({'url':imglink})
+            pic=arr
+          }
+          else{
+          pic = [{"url":imglink}] }
+        })
+      
+        db.collection("gallery").doc(folder).set(
             {
-                "url":imglink,
+                "url":pic,
                 "folder":folder
 
             }
