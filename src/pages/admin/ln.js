@@ -1,15 +1,18 @@
 import React, { useState } from 'react'
 import firebase from '../../../firebase/firebase'
 import Head from 'next/head'
+import { useCollectionData } from 'react-firebase-hooks/firestore'
+
 
 function LatestNews() {
+  const [ln]=useCollectionData(firebase.firestore().collection("latest_news"))
   const [img, setimg] = useState()
   const [detail, setdetail] = useState()
   const post=async()=>{
    const str = firebase.storage()
    const db = firebase.firestore()
     await str.ref("latest_news").child(img.name).put(img)
-    await db.collection("latest_news").doc().set({
+    await db.collection("latest_news").doc(detail).set({
     "photo":await str.ref("latest_news").child(img.name).getDownloadURL(),
     "detail":detail,
     "created": firebase.firestore.FieldValue.serverTimestamp()
@@ -48,6 +51,35 @@ function LatestNews() {
 </form>
 </div>
 
+
+<section>
+<div className="container py-5 text-center">
+    <h2 className="fw-bolder justify-content-centre mb-4" align="center">Latest <span style={{color:"#1D976C"}}>News & Events</span></h2>
+
+  <div className="row row-cols-1 row-cols-sm-2 row-cols-md-4">
+  {ln&&ln.map((e)=>
+
+    <div className="col py-2">
+
+    <div className="card border border-1">
+  <img src={e.photo} className="card-img-top" alt="..."/>
+  <div className="card-body">
+    <p className="card-text fw-semibold">{e.detail}</p>
+
+  </div>
+</div>
+<button onClick={()=>{
+  firebase.firestore().collection("latest_news").doc(e.detail).delete()
+}} className='btn btn-danger' >Delete</button>
+    </div>
+    
+     )}
+
+
+    
+  </div>
+</div>
+</section>
 </div>
 </div>
   )

@@ -1,13 +1,15 @@
 import React,{useState} from 'react'
 import firebase from '../../../firebase/firebase'
 import Head from 'next/head'
+import { useCollectionData } from 'react-firebase-hooks/firestore'
 
 function AcademicRepository() {
+  const [ae]= useCollectionData(firebase.firestore().collection("academic_repository"))
   const [img, setimg] = useState()
   const [pdf, setpdf] = useState()
   const [title, settitle] = useState()
 
-
+console.log(ae)
   const upload=async()=>{
        const str = firebase.storage()
        const db = firebase.firestore()
@@ -15,7 +17,7 @@ function AcademicRepository() {
        await str.ref("academic_repository").child(title).child(img.name).put(img)
        const l1 =       await str.ref("academic_repository").child(title).child(pdf.name).getDownloadURL()
        const l2 =await str.ref("academic_repository").child(title).child(img.name).getDownloadURL()
-       db.collection("academic_repository").doc().set({
+       db.collection("academic_repository").doc(title).set({
         "title":title,
         "image":l2,
         "pdf":l1
@@ -66,7 +68,22 @@ function AcademicRepository() {
 </div>
 
 </div>
+{ae&&ae.map((e)=>
+  <>
+    <img src={e.image} className="card-img-top rounded-4 border-0" alt="" onClick={()=>{Router.push(e.pdf)}} />
+    <div className="card-body">
+      <h5 className="card-title fw-bold">{e.title}</h5>
+    
+  
 </div>
+<button onClick={()=>{
+    firebase.firestore().collection("academic_repository").doc(e.title).delete()
+  }} className='btn btn-danger'>delete</button>
+</>
+  )}
+</div>
+
+   
   )
 }
 
