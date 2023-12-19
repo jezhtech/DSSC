@@ -17,7 +17,7 @@ function Gallery() {
     <title>DSSC - Gallery</title>
     </Head>
     <body className="">
-    <header>
+        <header>
         <div px-5>
           <nav className="navbar navbar-expand-lg bg-body-tertiary px-lg-5 px-0 border border-bottom ">
             <div className="container-fluid">
@@ -37,6 +37,7 @@ function Gallery() {
               <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div className="navbar-nav fw-bolder h4 mx-auto">
                   <a className="nav-link p-3 mx-lg-2 mx-0 " href="/">Home</a>
+                  <a className="nav-link p-3 mx-lg-2 mx-0" href="/about">About Us</a>
                   <a className="nav-link p-3 mx-lg-2 mx-0 " href="/registered-schools">Registered Schools</a>
                   <a className="nav-link p-3 mx-lg-2 mx-0 active border-bottom border-success border-4" aria-current="page" href="/gallery">Gallery</a>
                   <a className="nav-link p-3 mx-lg-2 mx-0 "></a>
