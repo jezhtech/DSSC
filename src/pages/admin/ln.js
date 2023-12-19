@@ -54,7 +54,7 @@ function LatestNews() {
 
 <section>
 <div className="container py-5 text-center">
-    <h2 className="fw-bolder justify-content-centre mb-4" align="center">Latest <span style={{color:"#1D976C"}}>News & Events</span></h2>
+    <h2 className="fw-bolder justify-content-centre mb-4" align="center">Preview</h2>
 
   <div className="row row-cols-1 row-cols-sm-2 row-cols-md-4">
   {ln&&ln.map((e)=>
@@ -67,10 +67,10 @@ function LatestNews() {
     <p className="card-text fw-semibold">{e.detail}</p>
 
   </div>
-</div>
-<button onClick={()=>{
+  <button onClick={()=>{
   firebase.firestore().collection("latest_news").doc(e.detail).delete()
 }} className='btn btn-danger' >Delete</button>
+</div>
     </div>
     
      )}
