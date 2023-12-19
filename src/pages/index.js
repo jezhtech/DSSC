@@ -19,45 +19,17 @@ function Home() {
     i=Academic_repository[0]
    
   }  
-  var ue =null
-  var oe =null
-  
-  if(upcoming_events!=undefined){
-    if(ue===null){
 
-
-
-
-
-      
-   
-      var n1=Math.floor((Math.random()*upcoming_events.length))
-      ue=upcoming_events[n1]
-      
-  }
-     
-   
-  }
-  
-  if(upcoming_events!=undefined){
-    if(oe===null){
-   
-      var n2=Math.floor((Math.random()*upcoming_events.length))
-      oe=upcoming_events[n2]
-    }
-     
-   
-  }
- 
   
    
   return (
-<html>
+    <div>
+<div>
       <Head>
       <title>Dakshin Sahodaya School Complex</title>
       <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossOrigin="anonymous"/>
       </Head>
-      <body className="">
+      <div>
       <header>
         <div px-5>
           <nav className="navbar navbar-expand-lg bg-body-tertiary px-lg-5 px-0 border border-bottom ">
@@ -78,11 +50,19 @@ function Home() {
               <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div className="navbar-nav fw-bolder h4 mx-auto">
                   <a className="nav-link p-3 mx-lg-2 mx-0 border-bottom border-success border-4 active" aria-current="page" href="#">Home</a>
+                  <a className="nav-link p-3 mx-lg-2 mx-0" href="/about">About Us</a>
                   <a className="nav-link p-3 mx-lg-2 mx-0" href="/registered-schools">Registered Schools</a>
                   <a className="nav-link p-3 mx-lg-2 mx-0" href="/gallery">Gallery</a>
                   <a className="nav-link p-3 mx-lg-2 mx-0"></a>
                 </div>
-                <button type="button" className="btn btn-success btn-lg border-0 rounded-3 fw-bold px-5 py-3 shadow-sm" style={{backgroundImage:`linear-gradient(90deg,#1D976C,#93F9B9)`}} onClick={()=>{Router.push("/signup")}} >Register now</button>
+
+                  <button type="button" className="btn btn-success btn-lg border-0 rounded-3 fw-bold px-5 py-3 shadow-sm me-3" style={{backgroundImage:`linear-gradient(90deg,#1D976C,#93F9B9)`}} onClick={()=>{Router.push("/signup")}}>Sign Up</button>
+                  <button type="button" className="btn btn-lg border border-2 border-success rounded-3 shadow-sm" onClick={()=>{Router.push("/adminlogin")}}>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="39" height="39" fill="currentColor" class="bi bi-person-lock text-success" viewBox="0 0 16 16">
+  <path d="M11 5a3 3 0 1 1-6 0 3 3 0 0 1 6 0M8 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4m0 5.996V14H3s-1 0-1-1 1-4 6-4c.564 0 1.077.038 1.544.107a4.524 4.524 0 0 0-.803.918A10.46 10.46 0 0 0 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664zM9 13a1 1 0 0 1 1-1v-1a2 2 0 1 1 4 0v1a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1zm3-3a1 1 0 0 0-1 1v1h2v-1a1 1 0 0 0-1-1"/>
+</svg>
+                  </button>
+                
 
               </div>
             </div>
@@ -95,21 +75,21 @@ function Home() {
 
 
 <section className="hero">
-<div className="container-fluid text-center py-lg-5 px-lg-5 py-3">
+<div className="container-fluid text-center py-lg-0 px-lg-5 py-3">
   <div className="row align-items-center">
     <div className="col-sm-6" align="left">
       <div className="align-middle fw-bolder">
       <h1 className="display-4 fw-bolder fst-italic mb-0">Dakshin Sahodaya</h1>
       <h2 className="display-5 fst-italic fw-bold mt-0">Schools Complex</h2>
-      <p className="fw-semibold fs-5 py-2" align="justify2">Dakshin Sahodaya Schools Complex emerged as a common platform for all CBSE- affiliated schools in the districts of Kanyakumari, Tirunelveli and Tuticorin. At present there are 61 schools from these southern districts that are active members of Dakshin Sahodaya, its head office is positioned at Nagercoil. There are diverse array of activities carried out by Dakshin Sahodaya schools complex.</p>
+      <p className="fw-semibold fs-5 py-2" align="justify2">Dakshin Sahodaya Schools Complex emerged as a common platform for all CBSE- affiliated schools in the districts of Kanyakumari, Tirunelveli,Tenkasi and Tuticorin. At present there are 61 schools from these southern districts that are active members of Dakshin Sahodaya, its head office is positioned at Nagercoil. There are diverse array of activities carried out by Dakshin Sahodaya schools complex.</p>
       <button type="button" className="btn btn-success btn-lg border-0 rounded-3 fw-bold px-5 py-3  me-3 shadow-sm" style={{backgroundImage:`linear-gradient(90deg,#1D976C,#93F9B9)`}} onClick={()=>{Router.push("/signup")}} >Register now</button>
       <div className="d-grid gap-2 col-6 mx-auto">
     </div>
       </div>
     </div>
     <div className="col-sm-6 ">
-    <div className="py-3">
-      <img src="https://assets-global.website-files.com/653d4f8ca494cdf3055d9ae5/653d4fc73b2ad1cc7f6d2177_dakshin-sahodaya-hero.svg" className="img-fluid " width="590" height="250" alt=""/>
+    <div className="">
+      <img src="https://assets-global.website-files.com/653d4f8ca494cdf3055d9ae5/657ab60a069bbb935bebe212_college%20project.gif" className="img-fluid " width="590" height="250" alt=""/>
       </div>
     </div>
   </div>
@@ -237,49 +217,7 @@ function Home() {
   
 </section> */}
 
-<section> 
-<div className="container text-center justify-content-centre">
-    <h2 className="fw-bolder justify-content-centre my-4" align="center">Board <span style={{color:"#1D976C"}}>Members</span></h2>
 
-  <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 justify-content-centre">
-    <div className="col py-2">
-    <div className="card">
-  <img src="https://assets-global.website-files.com/653d4f8ca494cdf3055d9ae5/653fb3ab1f3495ab166e9388_WhatsApp%20Image%202023-10-30%20at%2013.40.52_54643543.jpg" className="card-img-top" alt="..."/>
-  <div className="card-body bg-light">
-    <h5 className="card-title fw-bolder">MR.BINUMON V.R</h5>
-    <h6 className="card-title fw-bolder" style={{color:"#1D976C"}}>PRESIDENT OF DSSC</h6>
-
-   
-
-  </div>
-</div>
-    </div>
-    <div className="col py-2">
-    <div className="card">
-  <img src="https://assets-global.website-files.com/653d4f8ca494cdf3055d9ae5/653fb3ab4b25921b624efa9b_WhatsApp%20Image%202023-10-30%20at%2013.40.52_8631ecfe.jpg" className="card-img-top" alt="..."/>
-  <div className="card-body bg-light">
-    <h5 className="card-title fw-bolder">MRS.MANJU RAJESH</h5>
-    <h6 className="card-title fw-bolder" style={{color:"#1D976C"}}>TREASURER OF DSSC</h6>
-
-    
-
-  </div>
-</div>
-    </div>
-    <div className="col py-2">
-    <div className="card">
-  <img src="https://assets-global.website-files.com/653d4f8ca494cdf3055d9ae5/653fb3abfdc3e36599194fba_WhatsApp%20Image%202023-10-30%20at%2013.40.52_2714fc51.jpg" className="card-img-top" alt="..."/>
-  <div className="card-body bg-light">
-    <h5 className="card-title fw-bolder">PROF. ZOHARA HUSSAIN</h5>
-    <h6 className="card-title fw-bolder" style={{color:"#1D976C"}}>SECRETARY OF DSSC</h6>
-
-
-  </div>
-</div>
-    </div>    
-  </div>
-</div>
-</section>
 
 
 <section className="py-5 py-md-5">
@@ -367,8 +305,9 @@ function Home() {
   </footer>  
 
 <Script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossOrigin="anonymous"></Script>
-      </body>
-  </html>
+      </div>
+  </div>
+  </div>
   )
 }
 
