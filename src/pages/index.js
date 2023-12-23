@@ -81,7 +81,7 @@ function Home() {
       <div className="align-middle fw-bolder">
       <h1 className="display-4 fw-bolder fst-italic mb-0">Dakshin Sahodaya</h1>
       <h2 className="display-5 fst-italic fw-bold mt-0">Schools Complex</h2>
-      <p className="fw-semibold fs-5 py-2" align="justify2">Dakshin Sahodaya Schools Complex emerged as a common platform for all CBSE- affiliated schools in the districts of Kanyakumari, Tirunelveli,Tenkasi and Tuticorin. At present there are 61 schools from these southern districts that are active members of Dakshin Sahodaya, its head office is positioned at Nagercoil. There are diverse array of activities carried out by Dakshin Sahodaya schools complex.</p>
+      <p className="fw-semibold fs-5 py-2" align="justify2">Dakshin Sahodaya Schools Complex emerged as a common platform for all CBSE- affiliated schools in the districts of Kanyakumari, Tirunelveli, Tenkasi and Tuticorin. At present there are 61 schools from these southern districts that are active members of Dakshin Sahodaya, its head office is positioned at Nagercoil. There are diverse array of activities carried out by Dakshin Sahodaya schools complex.</p>
       <button type="button" className="btn btn-success btn-lg border-0 rounded-3 fw-bold px-5 py-3  me-3 shadow-sm" style={{backgroundImage:`linear-gradient(90deg,#1D976C,#93F9B9)`}} onClick={()=>{Router.push("/signup")}} >Register now</button>
       <div className="d-grid gap-2 col-6 mx-auto">
     </div>
