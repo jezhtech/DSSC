@@ -129,21 +129,26 @@ function Home() {
    
     <div className="carousel-inner">
     <div className={`carousel-item active  ` } align="center">  
-    <div className="card rounded-4 border shadow-sm my-3" style={{"width":"18rem"}}>
-      <img src={i && i.image} className="card-img-top border-0" alt="" onClick={()=>{Router.push(i && i.pdf)}} />
-      <div className="card-body">
-        <h5 className="card-title fw-bold">{i && i.title}</h5>
-      </div>
+    <div className="card rounded-4 border border-2 my-3" style={{width:400,height:450}}>
+      <img src={i && i.image} style={{width:300,height:400}} className="card-img-top border-0 mx-auto" alt="" onClick={()=>{Router.push(i && i.pdf)}} />
+
+      <div class="card-footer">
+      <h5 className="card-title fw-bold text-body-secondary">{i && i.title}</h5>
+
+  </div>
     </div>
   </div>
     
     {Academic_repository && Academic_repository.map((e)=>
     <div className={`carousel-item ` } align="center">
-    <div className="card rounded-4 border shadow-sm my-3" style={{"width":"18rem"}}>
-      <img src={e.image} className="card-img-top rounded-4 border-0" alt="" onClick={()=>{Router.push(e.pdf)}} />
-      <div className="card-body">
-        <h5 className="card-title fw-bold">{e.title}</h5>
-      </div>
+    <div className="card rounded-4 border border-2 my-3" style={{width:400,height:450}}>
+      <img src={e.image} style={{width:300,height:400}} className="card-img-top rounded-4 border-0  mx-auto" alt="" onClick={()=>{Router.push(e.pdf)}} />
+
+      <div class="card-footer ">
+      <h5 className="card-title fw-bold text-body-secondary">{e.title}</h5>
+
+  </div>
+
     </div>
   </div>
     )}
@@ -260,8 +265,18 @@ function Home() {
     <div className="card border border-1">
   <img src={e.photo} className="card-img-top" alt="..."/>
   <div className="card-body">
-    <p className="card-text fw-semibold">{e.detail}</p>
-
+  <div class="d-flex">
+  <div class="p-2 w-100">
+  <p className="card-text fw-semibold" align="left">{e.detail}</p>
+  </div>
+  <div class="p-2 flex-shrink-1">
+  <a href={e.photo}>
+    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi text-success bi-cloud-arrow-down-fill" viewBox="0 0 16 16">
+  <path d="M8 2a5.53 5.53 0 0 0-3.594 1.342c-.766.66-1.321 1.52-1.464 2.383C1.266 6.095 0 7.555 0 9.318 0 11.366 1.708 13 3.781 13h8.906C14.502 13 16 11.57 16 9.773c0-1.636-1.242-2.969-2.834-3.194C12.923 3.999 10.69 2 8 2m2.354 6.854-2 2a.5.5 0 0 1-.708 0l-2-2a.5.5 0 1 1 .708-.708L7.5 9.293V5.5a.5.5 0 0 1 1 0v3.793l1.146-1.147a.5.5 0 0 1 .708.708z"/>
+</svg>
+    </a>
+  </div>
+</div>
   </div>
 </div>
     </div>
