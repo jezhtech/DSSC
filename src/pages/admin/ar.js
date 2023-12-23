@@ -68,20 +68,42 @@ console.log(ae)
 </div>
 
 </div>
-{ae&&ae.map((e)=>
+
+
+
+<div className="container-fluid text-center">
+
+<h2 className="fw-bolder justify-content-centre mb-4" align="center">Preview</h2>
+
+
+  <div className="row row-cols-5">
+  {ae&&ae.map((e)=>
   <>
-    <img src={e.image} className="card-img-top rounded-4 border-0" alt="" onClick={()=>{Router.push(e.pdf)}} />
-    <div className="card-body">
-      <h5 className="card-title fw-bold">{e.title}</h5>
+    <div className="col">
+    <div class="card m-1">
+  <img src={e.image} style={{width:260,height:260}} class="card-img-top mx-auto px-auto" alt="..."/>
+ 
+  <div class="card-body border border-top-bottom-1">
     
+    <h5 class="card-title">{e.title}</h5>
+
+  </div>
   
-</div>
-<button onClick={()=>{
+  <button onClick={()=>{
     firebase.firestore().collection("academic_repository").doc(e.title).delete()
-  }} className='btn btn-danger'>delete</button>
-</>
-  )}
+  }} className='btn btn-danger'>Delete</button>
 </div>
+    </div>
+    </>
+  )}
+  </div>
+</div>
+
+</div>
+
+
+
+
 
    
   )
